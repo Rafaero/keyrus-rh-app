@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <div className="main">
-        <h2 className="main-header">Nutcache-app</h2>
+        <h2 className="main-header">Keyrus RH App</h2>
         <div>
           <Route exact path='/create' component={Create} />
         </div>

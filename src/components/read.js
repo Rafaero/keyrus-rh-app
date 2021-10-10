@@ -30,11 +30,12 @@ export default function Read() {
     }, []);
 
     const setData = (data) => {
-        let { id, name, email, CPF, birthdate, startDate, gender, team } = data;
+        let { id, name, email, CPF, birthdate, startDate, gender, team, phone } = data;
         localStorage.setItem('ID', id);
         localStorage.setItem('Name', name);
         localStorage.setItem('Email', email);
         localStorage.setItem('CPF', CPF);
+        localStorage.setItem('Phone number', phone);
         localStorage.setItem('Birthdate', birthdate);
         localStorage.setItem('Start date', startDate);
         localStorage.setItem('Gender', gender);
@@ -49,6 +50,7 @@ export default function Read() {
                         <Table.HeaderCell>Name</Table.HeaderCell>
                         <Table.HeaderCell>Email</Table.HeaderCell>
                         <Table.HeaderCell>CPF</Table.HeaderCell>
+                        <Table.HeaderCell>Phone Number</Table.HeaderCell>
                         <Table.HeaderCell>Birthdate</Table.HeaderCell>
                         <Table.HeaderCell>Start date</Table.HeaderCell>
                         <Table.HeaderCell>Gender</Table.HeaderCell>
@@ -68,6 +70,7 @@ export default function Read() {
                                 <Table.Cell>{data.name}</Table.Cell>
                                 <Table.Cell>{data.email}</Table.Cell>
                                 <Table.Cell>{data.CPF}</Table.Cell>
+                                <Table.Cell>{data.phone}</Table.Cell>
                                 <Table.Cell>{data.birthdate}</Table.Cell>
                                 <Table.Cell>{data.startDate}</Table.Cell>
                                 <Table.Cell>{data.gender}</Table.Cell>

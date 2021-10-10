@@ -11,11 +11,12 @@ export default function Update() {
 
     const updateAPIData = () => {
 
-        if (name !== "" && email !== "" && CPF !== "" && birthdate !== "" && startDate !== "") {
+        if (name !== "" && email !== "" && CPF !== "" && birthdate !== "" && startDate !== "" && phone !== "") {
             axios.put(`https://6151da0a4a5f22001701d4da.mockapi.io/nutemployee/${id}`, {
                 name,
                 email,
                 CPF,
+                phone,
                 birthdate,
                 startDate,
                 gender,
@@ -31,6 +32,7 @@ export default function Update() {
         setName(localStorage.getItem('Name'));
         setEmail(localStorage.getItem('Email'));
         setCPF(localStorage.getItem('CPF'));
+        setPhone(localStorage.getItem('Phone number'));
         setBirthdate(localStorage.getItem('Birthdate'));
         setStartDate(localStorage.getItem('Start date'));
         setGender(localStorage.getItem('Gender'));
@@ -41,6 +43,7 @@ export default function Update() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [CPF, setCPF] = useState('');
+    const [phone, setPhone] = useState('');
     const [birthdate, setBirthdate] = useState('');
     const [startDate, setStartDate] = useState('');
     const [gender, setGender] = useState('');
@@ -57,6 +60,9 @@ export default function Update() {
                     <input placeholder='Email' type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
                     <label>CPF: </label>
                     <input placeholder='CPF' required value={CPF} onChange={(e) => setCPF(e.target.value)} />
+                    <label>Phone number: </label>
+                    <input placeholder='Phone Number' required value={phone} onChange={(e) => setPhone(e.target.value)} />
+
 
                     <label>Birthdate: </label>
                     <div class="ui calendar" id="example1">

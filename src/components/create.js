@@ -11,6 +11,7 @@ export default function Create() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [CPF, setCPF] = useState('');
+    const [phone, setPhone] = useState('');
     const [birthdate, setBirthdate] = useState('');
     const [startDate, setStartDate] = useState('');
     const [gender, setGender] = useState('');
@@ -18,12 +19,13 @@ export default function Create() {
 
     const postData = () => {
 
-        if (name !== "" && email !== "" && CPF !== "" && birthdate !== "" && startDate !== "") {
+        if (name !== "" && email !== "" && CPF !== "" && birthdate !== "" && startDate !== "" && phone !== "") {
             axios.post(`https://6151da0a4a5f22001701d4da.mockapi.io/nutemployee`,
                 {
                     name,
                     email,
                     CPF,
+                    phone,
                     birthdate,
                     startDate,
                     gender,
@@ -45,6 +47,8 @@ export default function Create() {
                     <input placeholder='Email' required type="email" onChange={(e) => setEmail(e.target.value)} />
                     <label>CPF: </label>
                     <input placeholder='CPF' required onChange={(e) => setCPF(e.target.value)} />
+                    <label>Phone Number: </label>
+                    <input placeholder='Phone Number' type="tel" required onChange={(e) => setPhone(e.target.value)} />
 
                     <label>Birthdate: </label>
                     <div class="ui calendar" id="example1">
